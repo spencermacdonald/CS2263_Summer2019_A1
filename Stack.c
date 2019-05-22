@@ -69,9 +69,16 @@ void print_stack(int *stack, int *size)
  */
 bool push(int *stack, int *size, int max_size, int to_push)
 {
-	/**
-	 * TODO: finish implementing this
-	 */
+	if((*size) == max_size)
+	{
+		return false;
+	}
+	else
+	{
+		stack[(*size)] = to_push;
+		(*size) = (*size) + 1;
+		return true;
+	}
 }
 
 /**
