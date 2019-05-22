@@ -98,9 +98,16 @@ bool push(int *stack, int *size, int max_size, int to_push)
  */
 bool pop(int *stack, int *size, int *to_return)
 {
-	/**
-	 * TODO: finish implementing this
-	 */
+	if((*size) == 0)
+	{
+		return false;
+	}
+	else
+	{
+		(*to_return) = stack[(*size) - 1];
+		(*size) = (*size) -1;
+		return true;
+	}
 }
 
 /**
