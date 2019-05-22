@@ -220,14 +220,16 @@ int main( int argc, char **argv )
 			if(input_instruction == 'u')
 			{
 				int input;
-				if(!scanf("%d", &input))
+				if(!scanf("%d", &input)) //added incase the user inputs an incorrect value
    				{
         			printf("ERROR. Must enter an integer.\n");
         			return EXIT_FAILURE;
    				}
 				if(push(stack, &stack_current_size, stack_max_size, input))
 				{
-					print_stack(stack,&stack_current_size);
+					//print_stack(stack,&stack_current_size);
+					printf("%d\n", input);
+					successful_instructions++;
 				}
 				else
 				{
@@ -240,6 +242,7 @@ int main( int argc, char **argv )
 				if(pop(stack,&stack_current_size,&returnValue))
 				{
 					printf("%d",returnValue);
+					successful_instructions++;
 				}
 				else
 				{
@@ -251,7 +254,8 @@ int main( int argc, char **argv )
 				int returnValue = 0;
 				if(peek(stack,&stack_current_size,&returnValue))
 				{
-					printf("d", returnValue);
+					printf("%d", returnValue);
+					successful_instructions++;
 				}
 				else
 				{
