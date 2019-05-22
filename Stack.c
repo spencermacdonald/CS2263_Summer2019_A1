@@ -233,7 +233,7 @@ int main( int argc, char **argv )
 				}
 				else
 				{
-					printf("failed peek\n");
+					printf("failed push\n");
 				}
 			}
 			else if (input_instruction == 'o')
@@ -241,7 +241,7 @@ int main( int argc, char **argv )
 				int returnValue = 0;
 				if(pop(stack,&stack_current_size,&returnValue))
 				{
-					printf("%d",returnValue);
+					printf("%d\n",returnValue);
 					successful_instructions++;
 				}
 				else
@@ -254,7 +254,7 @@ int main( int argc, char **argv )
 				int returnValue = 0;
 				if(peek(stack,&stack_current_size,&returnValue))
 				{
-					printf("%d", returnValue);
+					printf("%d\n", returnValue);
 					successful_instructions++;
 				}
 				else
@@ -266,6 +266,10 @@ int main( int argc, char **argv )
 			else if (input_instruction == 'x')
 			{
 				stop_execution = true;
+			}
+			else
+			{
+				printf("invalid instruction %c\n", input_instruction);
 			}
 		}
 	}
