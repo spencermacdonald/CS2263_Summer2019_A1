@@ -113,9 +113,16 @@ bool pop(int *stack, int *size, int *to_return)
  */
 bool peek(int *stack, int *size, int *to_return)
 {
-	/**
-	 * TODO: finish implementing this
-	 */
+	if((*size) == 0)
+	{
+		return false;
+	}
+	else
+	{
+		(*to_return) = stack[(*size) - 1];
+		return true;
+	}
+	
 }
 
 /*******************************************************
@@ -196,9 +203,22 @@ int main( int argc, char **argv )
 		// the character could be a whitespace so we need to skip those
 		if( false == is_whitespace(input_instruction) )
 		{
-			/**
-			 * TODO: finish implementing this
-			 */
+			if(input_instruction == 'u')
+			{
+
+			}
+			else if (input_instruction == 'o')
+			{
+
+			}
+			else if (input_instruction == 'e')
+			{
+
+			} 
+			else if (input_instruction == 'x')
+			{
+
+			}
 		}
 	}
 
